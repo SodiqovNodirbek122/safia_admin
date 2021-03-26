@@ -79,9 +79,9 @@ module.exports = {
                         options: {
                             lessOptions: {
                                 modifyVars: {
-                                    'primary-color': '#D75246',
-                                    'link-color': '#1890ff',
-                                    'border-radius-base': '3px',
+                                    'primary-color': '#8B0037',
+                                    'link-color': '#8B0037',
+                                    'border-radius-base': '1px',
                                     'border-color-base': '#bab4b4'
                                 },
                                 javascriptEnabled: true

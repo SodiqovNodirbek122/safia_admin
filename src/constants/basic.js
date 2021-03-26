@@ -1,4 +1,4 @@
-import logo from '@/assets/images/muno.svg'
+import logo from '@/assets/images/anor_logo.svg'
 const basic = {
     PRIMARY_COLOR: '#a7d129',
     TITLE: 'MUNO',

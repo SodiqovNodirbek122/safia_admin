@@ -8,7 +8,7 @@ import './login.less'
 import { useHistory } from 'react-router-dom'
 import { useMutation } from 'react-query'
 import { requests } from '@/redux/requests'
-import logo from '@/assets/images/muno.svg'
+import logo from '@/assets/images/anor_logo.svg'
 function Login() {
   const dispatch = useDispatch()
   const history = useHistory()
