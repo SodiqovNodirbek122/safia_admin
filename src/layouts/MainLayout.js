@@ -11,18 +11,18 @@ const { Header, Content, Sider } = Layout
 
 // ***********************WEBSOCKET****************************************
 const token = localStorage.getItem('token')
-if (token) {
-  const websocket = new WebSocket(`wss://websocket.muno.uz/ws?Authorization=${token}`)
-  websocket.onopen = () => {
-    console.log('Muno socket connecting.....')
-  }
-  websocket.onmessage = (e) => {
-    console.log('WebSocket message received: ', e)
-    notification.warning({
-      message: 'WebSocket Received'
-    })
-  }
-}
+// if (token) {
+//   const websocket = new WebSocket(`wss://websocket.muno.uz/ws?Authorization=${token}`)
+//   websocket.onopen = () => {
+//     console.log('Muno socket connecting.....')
+//   }
+//   websocket.onmessage = (e) => {
+//     console.log('WebSocket message received: ', e)
+//     notification.warning({
+//       message: 'WebSocket Received'
+//     })
+//   }
+// }
 // ***********************WEBSOCKET****************************************
 
 

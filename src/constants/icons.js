@@ -2,7 +2,8 @@ import {
     DesktopOutlined,
     PieChartOutlined,
     UserOutlined,
-    AppstoreOutlined
+    AppstoreOutlined,
+    DashboardOutlined
 } from '@ant-design/icons'
 
 function IconFinder (icon) {
@@ -11,6 +12,7 @@ function IconFinder (icon) {
         case 'PieChartOutlined': return ( <PieChartOutlined /> )
         case 'UserOutlined': return ( <UserOutlined /> )
         case 'AppstoreOutlined': return ( <AppstoreOutlined /> )
+        case 'DashboardOutlined': return ( <DashboardOutlined /> )
         default: break
     }
 }
