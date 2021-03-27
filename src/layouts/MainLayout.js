@@ -33,7 +33,7 @@ export default function MainLayout({ children }) {
   const [collapsed, setCollapsed] = useState(false)
   const isAuthorited = useSelector((state) => state.auth.accessToken)
   return (
-    <div className={`App ${isAuthorited ? '' : 'd-none'}`}>
+    // <div className={`App ${isAuthorited ? '' : 'd-none'}`}>
       <Layout style={{ minHeight: '100vh' }}>
         <Sider
           className='slider'
@@ -71,6 +71,6 @@ export default function MainLayout({ children }) {
           <Content style={{ margin: '0 16px' }} className="mainBox">{children}</Content>
         </Layout>
       </Layout>
-    </div>
+    // </div>
   )
 }
