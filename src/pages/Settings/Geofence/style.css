@@ -1,0 +1,32 @@
+
+.settings-geofence {
+    margin-top: 24px;
+    /* background-color: #fff; */
+    width: 100%;
+}
+
+.settings-geofence .site-input-right {
+    width: 100px !important;
+    text-align: center !important;
+}
+
+.settings-geofence .site-input-right:not(:hover, :focus) {
+    border-left: 0;
+}
+
+.settings-geofence .ant-card-body {
+    padding: 8px;
+}
+
+.settings-geofence .card-footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 12px 0;
+}
+
+.settings-geofence .card-footer .card-footer-text {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,6 +1,7 @@
 import logo from '@/assets/images/anor_logo.svg'
 const basic = {
     PRIMARY_COLOR: '#a7d129',
+    SECONDARY_COLOR: "#cdcdcd",
     TITLE: 'MUNO',
     MENU_THEME: 'dark',
     COMPANY_NAME: 'Udevs',

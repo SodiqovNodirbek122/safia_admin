@@ -5,7 +5,6 @@ import BreadCrumbTemplete from "../../components/breadcrumb/BreadCrumbTemplete"
 import { SearchOutlined, PictureFilled } from '@ant-design/icons';
 import { Row, Col, Divider, Form, Input, Button, Upload } from 'antd';
 
-
 export default function MobileRepresentatives() {
     const { t } = useTranslation() 
 
