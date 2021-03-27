@@ -1,4 +1,4 @@
-const permissions = ['dashboard',  '404']
+const permissions = ['dashboard',  '404', "mobileRepresentatives", "orders", "settings"]
 
 function guard (route) {
     let _isHave = false

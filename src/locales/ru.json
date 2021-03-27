@@ -32,5 +32,12 @@
   "russian": "Pусский",
   "english": "Aнглийский",
   "create.category": "Создать категорию",
-  "dashboard": "Дашборд"
+  "dashboard": "Дашборд",
+  "mobile representatives": "Мобильные представители",
+  "orders": "Заказы",
+  "settings": "Настройки",
+  "geofence": "Геозона",
+  "branches": "Филиалы",
+  "timeslots": "Таймслоты",
+  "form": "Форма"
 }

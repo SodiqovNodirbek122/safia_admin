@@ -22,7 +22,11 @@ const BreadCrumbTemplete = function(props) {
                         {
                             routes.map(e =>
                                 <Breadcrumb.Item key={e.name}>
-                                    { e.link ? ( <Link to={e.route} style={{ fontSize: '16px' }} replace>{ t(e.name) }</Link> ) : <span style={{ fontSize: '16px' }}>{t(e.name) }</span> }
+                                    { e.link ? ( 
+                                        <Link to={e.route} style={{ fontSize: '16px' }} replace>{ t(e.name) }</Link> 
+                                    ) : (
+                                        <span style={{ fontSize: '16px' }}>{t(e.name) }</span> 
+                                    )}
                                 </Breadcrumb.Item>
                             )
                         }
