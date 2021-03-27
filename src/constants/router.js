@@ -15,7 +15,7 @@ const routes = [
     name: 'mobileRepresentatives',
     isSub: false,
     component: lazy(() => import('@/pages/MobileRepresentatives/MobileRepresentatives')),
-    meta: { title: 'mobile representatives', icon: 'MobileOutlined', permission: 'mobileRepresentatives' },
+    meta: { title: 'mobile.representatives', icon: 'MobileOutlined', permission: 'mobileRepresentatives' },
     children: [],
   },
   {

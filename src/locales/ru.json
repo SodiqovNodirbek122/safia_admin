@@ -33,11 +33,20 @@
   "english": "Aнглийский",
   "create.category": "Создать категорию",
   "dashboard": "Дашборд",
-  "mobile representatives": "Мобильные представители",
+  "mobile.representatives": "Мобильные представители",
   "orders": "Заказы",
   "settings": "Настройки",
   "geofence": "Геозона",
   "branches": "Филиалы",
   "timeslots": "Таймслоты",
-  "form": "Форма"
+  "form": "Форма",
+  "mobile.rep.divider.title": "Форма для регистрации мобильного представителя",
+  "fio": "ФИО",
+  "address": "Адрес",
+  "birth.date": "Дата рождения",
+  "change": "Смена",
+  "telephone.number": "Телефонный номер",
+  "select.geofence": "Выберите геозону",
+  "select.image": "Выбрать изображение",
+  "select.image.label": "Загрузите свое изображение сюда"
 }

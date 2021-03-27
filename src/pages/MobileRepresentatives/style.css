@@ -3,3 +3,19 @@
     background-color: #fff;
     width: 100%;
 }
+
+.mobile-representatives .ant-form-vertical .ant-form-item-label {
+    padding: 0;
+}
+
+.mobile-representatives .avatar-uploader .ant-upload.ant-upload-select-picture-card {
+    width: 140px;
+    height: 140px;
+}
+
+.mobile-representatives .select-img-label {
+    width: 140px;
+    margin: 0;
+    margin-bottom: 10px;
+    line-height: 16px;
+}
