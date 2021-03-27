@@ -3,11 +3,11 @@ import React from "react"
 import { useTranslation } from "react-i18next";
 import BreadCrumbTemplete from "../../components/breadcrumb/BreadCrumbTemplete"
 import { SearchOutlined, PictureFilled } from '@ant-design/icons';
-import { Row, Col, Divider, Form, Input, Button, Upload, message  } from 'antd';
+import { Row, Col, Divider, Form, Input, Button, Upload } from 'antd';
 
 
 export default function MobileRepresentatives() {
-    const { t, i18n } = useTranslation() 
+    const { t } = useTranslation() 
 
     const routes = [
         {
@@ -42,18 +42,16 @@ export default function MobileRepresentatives() {
                 <Row>
                     <Col span={10} offset={2}>
                         <Form
-                            // {...layout}
                             layout="vertical"
                             name="mobile-representatives-form"
-                            // initialValues={{ remember: true }}
                             // onFinish={onFinish}
                             // onFinishFailed={onFinishFailed}
                         >
                             <Form.Item label={t("fio")}>
-                                <Input placeholder="input placeholder" />
+                                <Input />
                             </Form.Item>
                             <Form.Item label={t("address")}>
-                                <Input placeholder="input placeholder" />
+                                <Input />
                             </Form.Item>
                             <div>
                                 <Form.Item
@@ -62,7 +60,7 @@ export default function MobileRepresentatives() {
                                     // rules={[{ required: true }]}
                                     style={{ display: 'inline-block', width: 'calc(50% - 8px)' }}
                                 >
-                                    <Input placeholder="Input birth year" />
+                                    <Input />
                                 </Form.Item>
                                 <Form.Item
                                     name="month"
@@ -70,15 +68,14 @@ export default function MobileRepresentatives() {
                                     // rules={[{ required: true }]}
                                     style={{ display: 'inline-block', width: 'calc(50% - 8px)', marginLeft: 16 }}
                                 >
-                                    <Input placeholder="Input birth month" />
+                                    <Input />
                                 </Form.Item>
                             </div>
                             <Form.Item label={t("telephone.number")}>
-                                <Input placeholder="input placeholder" />
+                                <Input />
                             </Form.Item>
                             <Form.Item label={t("select.geofence")}>
-                                <Input 
-                                    placeholder="input placeholder" 
+                                <Input
                                     suffix={
                                         <SearchOutlined />
                                     }
