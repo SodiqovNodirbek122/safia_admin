@@ -5,6 +5,19 @@
     width: 100%;
 }
 
+.settings-geofence .site-input-left {
+    width: 100px !important;
+    text-align: center !important;
+}
+
+.settings-geofence .site-input-split {
+    width: 30px !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+    background-color: #fff !important;
+    pointer-events: none !important;
+}
+
 .settings-geofence .site-input-right {
     width: 100px !important;
     text-align: center !important;
@@ -16,6 +29,11 @@
 
 .settings-geofence .ant-card-body {
     padding: 8px;
+}
+
+.settings-geofence .ant-card-body .ant-skeleton {
+    width: 100%;
+    height: 100%;
 }
 
 .settings-geofence .card-footer {

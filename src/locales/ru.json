@@ -48,5 +48,7 @@
   "telephone.number": "Телефонный номер",
   "select.geofence": "Выберите геозону",
   "select.image": "Выбрать изображение",
-  "select.image.label": "Загрузите свое изображение сюда"
+  "select.image.label": "Загрузите свое изображение сюда",
+  "beginning.date": "Дата начала",
+  "select.status": "Выберите статус"
 }

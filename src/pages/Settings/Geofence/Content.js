@@ -1,23 +1,41 @@
 import "./style.css"
-import React from "react"
+import React, { useState } from "react"
 import Basic from "@/constants/basic";
+import { YMaps, Map } from 'react-yandex-maps';
 import { useTranslation } from "react-i18next";
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
-import { Row, Col, Card, Form, Input, Button, Upload, Select, Typography } from 'antd';
+import { Row, Col, Card, Skeleton, Form, Input, Button, Upload, Select, Typography, Pagination } from 'antd';
 
 export default function Content() {
+    const [ isMapLoaded, setIsMapLoaded ] = useState([])
     const { t } = useTranslation()
     const { Text } = Typography
     const { SECONDARY_COLOR } = Basic
+
+    const setMapLoad = index => {
+        setIsMapLoaded(old => [...old, index])
+    }
 
     return (
         <Row justify="center" style={{marginTop: 36}}>
             <Col span={23}>
                 <Row justify="space-between">
-                    {arr.map((v, i) => (
-                        <Col xl={6} lg={8} md={12} sm={24} style={{padding: 10}} key={i}>
+                    {arr.map((v, index) => (
+                        <Col xl={6} lg={8} md={12} sm={24} style={{padding: 10}} key={index}>
                             <Card>
-                                <img width="100%" src="https://cdn.mapsinternational.co.uk/pub/media/catalog/product/cache/9408c2af9b2aa1f0e92b23ce5de2be46/w/o/world-wall-map-political-without-flags_wm00001_h.jpg" />
+                                <div style={{ width: '100%', aspectRatio: "16/9"}}>
+                                    {!isMapLoaded.includes(index) &&
+                                        <Skeleton.Input style={{ width: "100%", height: "100%" }} active={true} size="large" />                                    
+                                    }
+                                    <YMaps>
+                                        <Map 
+                                            width="100%" 
+                                            height="100%" 
+                                            onLoad={() => setMapLoad(index)}
+                                            defaultState={{ center: [55.751574, 37.573856], zoom: 9 }} 
+                                        />
+                                    </YMaps>
+                                </div>
                                 <div className="card-footer">
                                     <div className="card-footer-text">
                                         <Text style={{fontSize: 12}} strong>Ant Design</Text>
@@ -41,6 +59,16 @@ export default function Content() {
                             </Card>
                         </Col>
                     ))}
+                </Row>
+                <Row justify="end">
+                    <Col style={{padding: 10}}>
+                        <Pagination
+                            showSizeChanger
+                            // onShowSizeChange={onShowSizeChange}
+                            defaultCurrent={3}
+                            total={500}
+                        />
+                    </Col>
                 </Row>
             </Col>
         </Row>

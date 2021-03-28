@@ -17,7 +17,7 @@ export default function Header() {
                 >
                     <Form.Item style={{flex: 'auto', margin: 0}} name="gender">
                         <Select
-                            placeholder="Select a option"
+                            placeholder={t("select.status")}
                             // onChange={onGenderChange}
                             allowClear
                         >
@@ -28,7 +28,7 @@ export default function Header() {
                     </Form.Item>
                     <Form.Item style={{flex: 'auto', margin: 0, marginLeft: 16}} name="gender">
                         <Select
-                            placeholder="Select a option"
+                            placeholder={t("select.status")}
                             // onChange={onGenderChange}
                             allowClear
                         >
@@ -39,7 +39,7 @@ export default function Header() {
                     </Form.Item>
                     <Form.Item style={{flex: 'auto', margin: 0, marginLeft: 16}} name="gender">
                         <Select
-                            placeholder="Select a option"
+                            placeholder={t("select.status")}
                             // onChange={onGenderChange}
                             allowClear
                         >
@@ -51,18 +51,19 @@ export default function Header() {
                     <Form.Item style={{ margin: 0, marginLeft: 16}}>
                         <Input.Group compact>
                             <Input 
-                                style={{ width: 100, textAlign: 'center' }} 
-                                placeholder="Minimum" 
+                                className="site-input-left"
+                                // style={{ width: 100, textAlign: 'center' }} 
+                                placeholder={t("beginning.date")} 
                             />
                             <Input
                                 className="site-input-split"
-                                style={{
-                                    width: 30,
-                                    borderLeft: 0,
-                                    borderRight: 0,
-                                    backgroundColor: "#fff",
-                                    pointerEvents: 'none',
-                                }}
+                                // style={{
+                                //     width: 30,
+                                //     borderLeft: 0,
+                                //     borderRight: 0,
+                                //     backgroundColor: "#fff",
+                                //     pointerEvents: 'none',
+                                // }}
                                 placeholder="~"
                                 disabled
                             />
@@ -73,7 +74,7 @@ export default function Header() {
                                 //     // borderLeft: 0,
                                 //     textAlign: 'center',
                                 // }}
-                                placeholder="Maximum"
+                                placeholder={t("beginning.date")}
                             />
                         </Input.Group>
                     </Form.Item>
