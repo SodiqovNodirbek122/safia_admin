@@ -6,7 +6,7 @@ import { YMaps, Map, ZoomControl } from 'react-yandex-maps';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import { Row, Col, Card, Skeleton, Form, Input, Button, Upload, Select, Typography, Pagination } from 'antd';
 
-export default function CreateMap({save}) {
+export function CreateMap({save}) {
     const { t } = useTranslation()
 
     return (

@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import { Row, Col, Card, Skeleton, Form, Input, Button, Upload, Select, Typography, Pagination } from 'antd';
 
-export default function Content() {
+export function Content() {
     const { t } = useTranslation()
     const { Text } = Typography
     const { SECONDARY_COLOR } = Basic

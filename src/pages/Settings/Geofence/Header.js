@@ -2,7 +2,7 @@ import React from "react"
 import { useTranslation } from "react-i18next";
 import { Row, Col, Form, Input, Button, Select } from 'antd';
 
-export default function Header({create}) {
+export function Header({create}) {
     const { t } = useTranslation()
 
     return (

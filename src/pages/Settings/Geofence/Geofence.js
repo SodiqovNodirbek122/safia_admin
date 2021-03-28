@@ -1,8 +1,8 @@
 import "./style.css"
 import React, {useState} from "react"
-import Header from "./Header"
-import Content from "./Content"
-import CreateMap from "./CreateMap"
+import { Header } from "./Header"
+import { Content } from "./Content"
+import { CreateMap } from "./CreateMap"
 import { useTranslation } from "react-i18next";
 import BreadCrumbTemplete from "../../../components/breadcrumb/BreadCrumbTemplete"
 import { SearchOutlined, PictureFilled } from '@ant-design/icons';
