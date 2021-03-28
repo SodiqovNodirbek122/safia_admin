@@ -1,5 +1,5 @@
 import "./style.css"
-import React, { useState } from "react"
+import React from "react"
 import Basic from "@/constants/basic";
 import { YMaps, Map } from 'react-yandex-maps';
 import { useTranslation } from "react-i18next";
@@ -7,31 +7,22 @@ import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import { Row, Col, Card, Skeleton, Form, Input, Button, Upload, Select, Typography, Pagination } from 'antd';
 
 export default function Content() {
-    const [ isMapLoaded, setIsMapLoaded ] = useState([])
     const { t } = useTranslation()
     const { Text } = Typography
     const { SECONDARY_COLOR } = Basic
 
-    const setMapLoad = index => {
-        setIsMapLoaded(old => [...old, index])
-    }
-
     return (
-        <Row justify="center" style={{marginTop: 36}}>
+        <Row justify="center" style={{marginTop: 36}} className="content">
             <Col span={23}>
                 <Row justify="space-between">
                     {arr.map((v, index) => (
                         <Col xl={6} lg={8} md={12} sm={24} style={{padding: 10}} key={index}>
                             <Card>
-                                <div style={{ width: '100%', aspectRatio: "16/9"}}>
-                                    {!isMapLoaded.includes(index) &&
-                                        <Skeleton.Input style={{ width: "100%", height: "100%" }} active={true} size="large" />                                    
-                                    }
+                                <div className="map-content">
                                     <YMaps>
                                         <Map 
                                             width="100%" 
                                             height="100%" 
-                                            onLoad={() => setMapLoad(index)}
                                             defaultState={{ center: [55.751574, 37.573856], zoom: 9 }} 
                                         />
                                     </YMaps>
