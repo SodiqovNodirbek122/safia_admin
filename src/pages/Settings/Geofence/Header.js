@@ -5,6 +5,10 @@ import { Row, Col, Form, Input, Button, Select } from 'antd';
 export function Header({create}) {
     const { t } = useTranslation()
 
+    const handleCreate = () => {
+        create()
+    }
+
     return (
         <Row style={{backgroundColor: "#fff"}} className="header">
             <Col span={24}>
@@ -79,7 +83,7 @@ export function Header({create}) {
                             />
                         </Input.Group>
                     </Form.Item>
-                    <Button type="primary" style={{margin: 20}} onClick={create}>
+                    <Button type="primary" style={{margin: 20}} onClick={handleCreate}>
                         {t("create")}
                     </Button>
                 </Form>
