@@ -2,7 +2,6 @@
 .settings-geofence {
     margin-top: 24px;
     width: 100%;
-    /* background-color: #fff; */
 }
 
 .settings-geofence .header .header-form {
@@ -14,12 +13,12 @@
 .settings-geofence .header .header-form .header-input {
     flex: auto;
     margin: 20px;
-    margin-right: 16px;
+    /* margin-right: 4px; */
 }
 
 .settings-geofence .header .header-form .header-input:nth-child(4) {
     flex: none;
-    margin-right: 32px;
+    /* margin-right: 12px; */
 }
 
 .settings-geofence .header .site-input-left {
@@ -49,11 +48,6 @@
 .settings-geofence .content .ant-card-body {
     padding: 8px;
 }
-/* 
-.settings-geofence .content .ant-card-body .ant-skeleton {
-    width: 100%;
-    height: 100%;
-} */
 
 .settings-geofence .content .ant-card-body .map-content {
     width: 100%;
@@ -72,4 +66,17 @@
 .settings-geofence .content .card-footer .card-footer-text {
     display: flex;
     flex-direction: column;
+}
+
+/* **************** CREATE MAP *************** */
+.settings-geofence .create-map {
+    padding: 17px;
+}
+
+.settings-geofence .create-map .map-content {
+    width: 100%;
+    aspect-ratio: 2;
+    /* height: 460px; */
+    background-color: rgba(190, 190, 190, 0.2);
+
 }

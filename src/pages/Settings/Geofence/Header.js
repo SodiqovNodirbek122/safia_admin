@@ -2,7 +2,7 @@ import React from "react"
 import { useTranslation } from "react-i18next";
 import { Row, Col, Form, Input, Button, Select } from 'antd';
 
-export default function Header() {
+export default function Header({create}) {
     const { t } = useTranslation()
 
     return (
@@ -79,7 +79,7 @@ export default function Header() {
                             />
                         </Input.Group>
                     </Form.Item>
-                    <Button type="primary" style={{margin: 20}}>
+                    <Button type="primary" style={{margin: 20}} onClick={create}>
                         {t("create")}
                     </Button>
                 </Form>
