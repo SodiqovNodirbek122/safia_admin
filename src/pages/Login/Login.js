@@ -13,6 +13,7 @@ function Login() {
   const dispatch = useDispatch()
   const history = useHistory()
   const [notfound, setNotFound] = useState(false)
+
   const [login, loginInfo] = useMutation(requests.auth.login, {
     onSuccess: (res) => {
       dispatch(isLoadingOverlay(false))
@@ -29,6 +30,15 @@ function Login() {
   })
 
   console.log('loginInfo => ', loginInfo)
+
+  // static Login func
+  // const login = (res) => {
+  //   dispatch(isLoadingOverlay(false))
+  //   dispatch(setAuthTokens(staticData))
+  //   localStorage.setItem('token', staticData.access_token)
+  //   history.push('/')
+  //   // document.location.reload()
+  // }
 
   const onFinish = (values) => {
     dispatch(isLoadingOverlay(true))
@@ -92,3 +102,7 @@ function Login() {
   )
 }
 export default Login
+
+const staticData = {
+  access_token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTc2MDMxOTcsImlhdCI6MTYxNjk5ODM5NywiaXNzIjoibXVubyIsInNlc3Npb25faWQiOiI5NGJlODg5Yy0yNWRmLTQxY2MtOTkyMy04ZjYwMGJjYzA2NmQiLCJzdGF0dXMiOiJBIiwic3ViIjoiYmZmOWQ0NGEtN2RkNC00Y2M5LThjOWMtMTM5NmVhYmY3NzVmIiwidXNlcl90eXBlIjoiYWRtaW4ifQ.WwoWusGGFGRimkNqyPIxIafgpivBEps1yk1EXD_i9zY"
+}

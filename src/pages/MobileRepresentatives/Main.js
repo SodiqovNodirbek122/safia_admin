@@ -1,17 +1,38 @@
+import "./style.css"
 import React from "react"
-import Basic from "@/constants/basic";
-import { useTranslation } from "react-i18next";
-import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
-import { Row, Col, Tag, Divider, Form, Input, Button, Upload, Table, Space } from 'antd';
+import Basic from "@/constants/basic"
+import { useHistory, useLocation } from "react-router-dom"
+import { useTranslation } from "react-i18next"
+import BreadCrumbTemplete from "../../components/breadcrumb/BreadCrumbTemplete"
+import { EditOutlined, DeleteOutlined } from '@ant-design/icons'
+import { Row, Col, Tag, Divider, Form, Input, Button, Upload, Table, Space } from 'antd'
 
 const { SECONDARY_COLOR } = Basic
 
-export function Main() {
+export default function Main() {
     const { t } = useTranslation()
+    const currentPath = useLocation().pathname
+    const history = useHistory()
 
     const handleCreate = () => {
-
+        history.push("/mobile-representatives/form")
     }
+
+    // console.log(useHistory(), "\npath:", currentPath)
+
+    const routes = [
+        {
+            name: 'Home',
+            route: '/',
+            link: true
+        },
+        {
+            name: 'mobile.representatives',
+            link: false,
+            route: '/mobile-representatives'
+        }
+    ]
+    
 
     const columns = [
         {
@@ -72,24 +93,30 @@ export function Main() {
     ];
     
     return (
-        <div className="main">
-            <Row justify="end">
-                <Col>
-                    <Button onClick={handleCreate} type="primary" style={{marginLeft: 8}}>
-                        {t("create")}
-                    </Button>
-                </Col>
-            </Row>
-            <Row style={{marginTop: 14}}>
-                <Col span={24}>
-                    <Table 
-                        size="small" 
-                        columns={columns} 
-                        dataSource={data} 
-                        pagination={pagination}
-                    />
-                </Col>
-            </Row>
+        <div>
+            <BreadCrumbTemplete routes={routes} />
+            
+            <div className="mobile-representatives">
+                <div className="main">
+                    <Row justify="end">
+                        <Col>
+                            <Button onClick={handleCreate} type="primary" style={{marginLeft: 8}}>
+                                {t("create")}
+                            </Button>
+                        </Col>
+                    </Row>
+                    <Row style={{marginTop: 14}}>
+                        <Col span={24}>
+                            <Table 
+                                size="small" 
+                                columns={columns} 
+                                dataSource={data} 
+                                pagination={pagination}
+                            />
+                        </Col>
+                    </Row>
+                </div>
+            </div>
         </div>
     )
 }
@@ -112,7 +139,7 @@ const data = [
         actions: {}
     },
     {
-        key: '1',
+        key: '2',
         fio: 'Sadullayev Anvar Abduganiyevich',
         region: "Toshkent sh.",
         district: 'Chirchiq shahri',
@@ -121,7 +148,7 @@ const data = [
         actions: {}
     },
     {
-        key: '1',
+        key: '3',
         fio: 'Sadullayev Anvar Abduganiyevich',
         region: "Toshkent sh.",
         district: 'Chirchiq shahri',
@@ -130,7 +157,7 @@ const data = [
         actions: {}
     },
     {
-        key: '1',
+        key: '4',
         fio: 'Sadullayev Anvar Abduganiyevich',
         region: "Toshkent sh.",
         district: 'Chirchiq shahri',
@@ -139,7 +166,7 @@ const data = [
         actions: {}
     },
     {
-        key: '1',
+        key: '5',
         fio: 'Sadullayev Anvar Abduganiyevich',
         region: "Toshkent sh.",
         district: 'Chirchiq shahri',
@@ -148,7 +175,7 @@ const data = [
         actions: {}
     },
     {
-        key: '1',
+        key: '6',
         fio: 'Sadullayev Anvar Abduganiyevich',
         region: "Toshkent sh.",
         district: 'Chirchiq shahri',
@@ -157,7 +184,7 @@ const data = [
         actions: {}
     },
     {
-        key: '1',
+        key: '7',
         fio: 'Sadullayev Anvar Abduganiyevich',
         region: "Toshkent sh.",
         district: 'Chirchiq shahri',
@@ -166,7 +193,7 @@ const data = [
         actions: {}
     },
     {
-        key: '1',
+        key: '8',
         fio: 'Sadullayev Anvar Abduganiyevich',
         region: "Toshkent sh.",
         district: 'Chirchiq shahri',
@@ -175,7 +202,7 @@ const data = [
         actions: {}
     },
     {
-        key: '1',
+        key: '9',
         fio: 'Sadullayev Anvar Abduganiyevich',
         region: "Toshkent sh.",
         district: 'Chirchiq shahri',
@@ -184,7 +211,7 @@ const data = [
         actions: {}
     },
     {
-        key: '1',
+        key: '10',
         fio: 'Sadullayev Anvar Abduganiyevich',
         region: "Toshkent sh.",
         district: 'Chirchiq shahri',

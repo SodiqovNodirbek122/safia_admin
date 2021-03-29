@@ -43,7 +43,7 @@ const Routes = () => {
     )
 
     console.log(publicRouteList)
-    console.log("Token: ", token)
+    // console.log("Token: ", token)
 
     return (
         <>

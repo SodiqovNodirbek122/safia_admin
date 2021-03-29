@@ -14,9 +14,18 @@ const routes = [
     path: '/mobile-representatives',
     name: 'mobileRepresentatives',
     isSub: false,
-    component: lazy(() => import('@/pages/MobileRepresentatives/MobileRepresentatives')),
+    component: lazy(() => import('@/pages/MobileRepresentatives/Main')),
     meta: { title: 'mobile.representatives', icon: 'MobileOutlined', permission: 'mobileRepresentatives' },
-    children: [],
+    children: [
+      {
+        path: '/mobile-representatives/form',
+        name: 'form',
+        isSub: false,
+        component: lazy(() => import('@/pages/MobileRepresentatives/Create')),
+        meta: { title: 'from', icon: '', permission: 'mobileRepresentatives' },
+        children: [],
+      },
+    ],
   },
   {
     path: '/orders',

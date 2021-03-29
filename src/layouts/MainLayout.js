@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {Layout, notification} from 'antd'
+import { useHistory } from "react-router-dom"
 import RightContent from '@/components/RightContent'
 import MenuHeader from '@/components/MenuHeader'
 import MainMenu from '@/components/menu/Menu'
@@ -32,6 +33,15 @@ const token = localStorage.getItem('token')
 export default function MainLayout({ children }) {
   const [collapsed, setCollapsed] = useState(false)
   const isAuthorited = useSelector((state) => state.auth.accessToken)
+
+  const history = useHistory()
+
+  useEffect(() => {
+    if(!isAuthorited) {
+      history.push('/login')
+    }
+  }, []);
+
   return (
     <div className={`App ${isAuthorited ? '' : 'd-none'}`}>
       <Layout style={{ minHeight: '100vh' }}>
