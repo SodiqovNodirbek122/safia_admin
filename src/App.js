@@ -10,6 +10,7 @@ import Routes from './routes/routes'
 import MainLayout from './layouts/MainLayout'
 import Login from './pages/Login/Login'
 import 'nprogress/nprogress.css'
+import OrdersLayout from "./layouts/OrdersLayout"
 
 function App() {
   const isLoad = useSelector((state) => state.auth.isLoading)
@@ -23,6 +24,11 @@ function App() {
             <MainLayout>
               <Routes />
             </MainLayout>
+
+            {/* <OrdersLayout>
+              <Routes />
+            </OrdersLayout> */}
+
           </BrowserRouter>
         </Suspense>
       </div>

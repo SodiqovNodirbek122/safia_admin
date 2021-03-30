@@ -14,31 +14,31 @@ function Login() {
   const history = useHistory()
   const [notfound, setNotFound] = useState(false)
 
-  const [login, loginInfo] = useMutation(requests.auth.login, {
-    onSuccess: (res) => {
-      dispatch(isLoadingOverlay(false))
-      dispatch(setAuthTokens(res))
-      localStorage.setItem('token', res.access_token)
-      history.push('/')
-      document.location.reload()
-    },
-    onError: () => {
-      console.log('error')
-      setNotFound(true)
-      dispatch(isLoadingOverlay(false))
-    },
-  })
+  // const [login, loginInfo] = useMutation(requests.auth.login, {
+  //   onSuccess: (res) => {
+  //     dispatch(isLoadingOverlay(false))
+  //     dispatch(setAuthTokens(res))
+  //     localStorage.setItem('token', res.access_token)
+  //     history.push('/')
+  //     document.location.reload()
+  //   },
+  //   onError: () => {
+  //     console.log('error')
+  //     setNotFound(true)
+  //     dispatch(isLoadingOverlay(false))
+  //   },
+  // })
 
-  console.log('loginInfo => ', loginInfo)
+  // console.log('loginInfo => ', loginInfo)
 
   // static Login func
-  // const login = (res) => {
-  //   dispatch(isLoadingOverlay(false))
-  //   dispatch(setAuthTokens(staticData))
-  //   localStorage.setItem('token', staticData.access_token)
-  //   history.push('/')
-  //   // document.location.reload()
-  // }
+  const login = (res) => {
+    dispatch(isLoadingOverlay(false))
+    dispatch(setAuthTokens(staticData))
+    localStorage.setItem('token', staticData.access_token)
+    history.push('/')
+    document.location.reload()
+  }
 
   const onFinish = (values) => {
     dispatch(isLoadingOverlay(true))

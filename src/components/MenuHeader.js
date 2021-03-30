@@ -4,10 +4,15 @@ import basic from "../constants/basic";
 import React from "react";
 
 function MenuHeader (props) {
+    const { isLogo2 = false } = props
+
     return (
         <div className='logo'>
             <div style={{margin: '0 auto'}}>
-                <img src={basic.LOGO} style={{ width: '80%' }}/>
+                <img 
+                    src={isLogo2 ? basic.LOGO2 : basic.LOGO} 
+                    style={{ width: '80%' }}
+                />
             </div>
             {/*{ !props.collapsed ? <h1 className='title'>{ basic.TITLE }</h1> : '' }*/}
             {/*<Avatar size={36} src={ basic.LOGO } className='avatar' icon={<UserOutlined />} />*/}
