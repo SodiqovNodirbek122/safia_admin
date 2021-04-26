@@ -4,11 +4,43 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
-    <title>AnorBank</title>
+    <title>Safia</title>
+    <style>
+      .loader {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+      }
+      .logo_loader {
+        width: 300px;
+        height: 200px;
+        transition: width 2s;
+        animation: loader infinite 2000ms;
+        animation-timing-function: cubic-bezier(.14,.8,.99,.21)
+      }
+
+
+      @keyframes loader {
+        0%, 100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.3);
+        }
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root">
+      <div class="loader">
+        <img class='logo_loader' src="../src/assets/images/safia_logo.svg" />
+      </div>
+    </div>
     <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-router-dom@5.2.0/umd/react-router-dom.min.js" crossorigin></script>
