@@ -2,11 +2,14 @@ const path = require('path')
 const hwp = require('html-webpack-plugin')
 // const webpack = require('webpack')
 const Dotenv = require('dotenv-webpack');
+const CopyPlugin = require("copy-webpack-plugin");
+
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const port = 7077
+
 module.exports = {
     mode: 'development',
-    entry: { index: path.resolve(__dirname, "src", "index.js") },
+    entry: {index: path.resolve(__dirname, "src", "index.js")},
     resolve: {
         alias: {
             '@': path.resolve(__dirname, 'src/'),
@@ -105,6 +108,14 @@ module.exports = {
         //         'REACT_APP_PORT': JSON.stringify(process.env.REACT_APP_PORT)
         //     }
         // }),
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, 'public', 'safia_logo.svg'),
+                    to: path.resolve(__dirname, 'dist', 'safia_logo.svg')
+                }
+            ]
+        }),
         new Dotenv()
     ]
 }
