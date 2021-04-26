@@ -11,7 +11,7 @@ function MenuHeader (props) {
             <div style={{margin: '0 auto'}}>
                 <img 
                     src={isLogo2 ? basic.LOGO2 : basic.LOGO} 
-                    style={{ width: '80%' }}
+                    style={{ width: '50%' }}
                 />
             </div>
             {/*{ !props.collapsed ? <h1 className='title'>{ basic.TITLE }</h1> : '' }*/}
