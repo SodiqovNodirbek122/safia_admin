@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Table } from "antd";
+import { Table, Row, Col, Input } from "antd";
 
 export default function TableList() {
   const [filteredInfo, SetFilteredInfo] = useState({});
@@ -75,10 +75,18 @@ export default function TableList() {
     SetFilteredInfo(filters);
     SetSortedInfo(sorter);
   };
+  const { Search } = Input;
 
   return (
     <div>
-      <Table columns={columns} dataSource={data} onChange={handleChange}/>
+      <Row>
+        <Col span={8}>
+          {/* <Search placeholder="input search text" /> */}
+        </Col>
+        <Col span={24}>
+          <Table columns={columns} dataSource={data} onChange={handleChange} />
+        </Col>
+      </Row>
     </div>
   );
 }
