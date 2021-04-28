@@ -121,7 +121,7 @@ export default function TableList() {
           <Button block type="primary" icon={<DownloadOutlined />}  />
         </Col>
         <Col style={{ padding: "12px" }} span={24}>
-          <Table columns={columns} dataSource={data} onChange={handleChange} />
+          <Table bordered columns={columns} dataSource={data} onChange={handleChange} />
         </Col>
       </Row>
     </div>

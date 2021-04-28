@@ -1,6 +1,6 @@
 .staff-table .ant-input,
-.ant-picker,
-.ant-dropdown-trigger {
+.staff-table .ant-picker,
+.staff-table .ant-dropdown-trigger {
   background: #f7f7f7 !important;
   border-radius: 6px !important;
   border: none !important;
