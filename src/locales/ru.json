@@ -61,6 +61,10 @@
   "candidates": "Кандидаты",
   "state": "Штат",
   "dismissed": "Уволенные",
+  "main": "Основное",
+  "work": "Работа",
+  "bonuses.penalties": "Бонусы / Штрафы",
+  "documents": "Документы",
   "reserve": "Резерв",
   "unfit": "Негоден",
 
