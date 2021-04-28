@@ -6,3 +6,11 @@
     margin: 0 !important;
     padding: 16px 20px !important;
 }
+
+.styled-tab .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #007AFF;
+}
+
+.styled-tab .ant-tabs-ink-bar {
+    background: #007AFF;
+}
