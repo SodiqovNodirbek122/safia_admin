@@ -57,6 +57,12 @@
   "select.status": "Выберите статус",
   
   "staff": "Сотрудники",
+  "fullname":"Ф.И.О",
+  "vacancy":"Вакансия",
+  "nomer.phone":"Номер телефона",
+  "search":"Поиск по ",
+  "expand.filter":"Развернуть фильтр",
+
 
   "candidates": "Кандидаты",
   "state": "Штат",

@@ -1,74 +1,96 @@
 import React from "react";
 import { useState } from "react";
-import { Table, Row, Col, Input } from "antd";
+import './style.css'
+import {
+  Table,
+  Row,
+  Col,
+  Input,
+  DatePicker,
+  Dropdown,
+  Button,
+  Menu,
+} from "antd";
+import { useTranslation } from "react-i18next";
+import { DownOutlined, FilterFilled,DownloadOutlined } from "@ant-design/icons";
 
 export default function TableList() {
+  const { t } = useTranslation();
   const [filteredInfo, SetFilteredInfo] = useState({});
   const [sortedInfo, SetSortedInfo] = useState({});
   const data = [
     {
       key: "1",
-      name: "John Brown",
-      age: 32,
-      address: "New York No. 1 Lake Park",
+      fullname: "John Brown",
+      vacancy: "vacancy",
+      branches: "New York No. 1 Lake Park",
     },
     {
       key: "2",
-      name: "Jim Green",
-      age: 42,
-      address: "London No. 1 Lake Park",
+      fullname: "Jim Green",
+      vacancy: "teacher ",
+      branches: "London No. 1 Lake Park",
     },
     {
       key: "3",
-      name: "Joe Black",
-      age: 32,
-      address: "Sidney No. 1 Lake Park",
+      fullname: "Joe Black",
+      vacancy: "best vacancy",
+      branches: "Sidney No. 1 Lake Park",
     },
     {
       key: "4",
-      name: "Jim Red",
-      age: 32,
-      address: "London No. 2 Lake Park",
+      fullname: "Jim Red",
+      vacancy: "best teacher",
+      branches: "London No. 2 Lake Park",
     },
   ];
   const columns = [
     {
-      title: "Name",
-      dataIndex: "name",
-      key: "name",
+      title: t("fullname"),
+      dataIndex: "fullname",
+      key: "fullname",
       filters: [
         { text: "Joe", value: "Joe" },
         { text: "Jim", value: "Jim" },
       ],
-      filteredValue: filteredInfo.name || null,
-      onFilter: (value, record) => record.name.includes(value),
-      sorter: (a, b) => a.name.length - b.name.length,
-      sortOrder: sortedInfo.columnKey === "name" && sortedInfo.order,
+      filteredValue: filteredInfo.fullname || null,
+      onFilter: (value, record) => record.fullname.includes(value),
       ellipsis: true,
     },
     {
-      title: "Age",
-      dataIndex: "age",
-      key: "age",
-      sorter: (a, b) => a.age - b.age,
-      sortOrder: sortedInfo.columnKey === "age" && sortedInfo.order,
+      title: t("vacancy"),
+      dataIndex: "vacancy",
+      key: "vacancy",
+      filters: [
+        { text: "vacancy", value: "vacancy" },
+        { text: "teacher", value: "Jiteacherm" },
+      ],
+      filteredValue: filteredInfo.vacancy || null,
+      onFilter: (value, record) => record.vacancy.includes(value),
       ellipsis: true,
     },
     {
-      title: "Address",
-      dataIndex: "address",
-      key: "address",
+      title: t("branches"),
+      dataIndex: "branches",
+      key: "branches",
       filters: [
         { text: "London", value: "London" },
         { text: "New York", value: "New York" },
       ],
-      filteredValue: filteredInfo.address || null,
-      onFilter: (value, record) => record.address.includes(value),
-      sorter: (a, b) => a.address.length - b.address.length,
-      sortOrder: sortedInfo.columnKey === "address" && sortedInfo.order,
-      ellipsis: true,
+      filteredValue: filteredInfo.branches || null,
+      onFilter: (value, record) => record.branches.includes(value),
+      // sorter: (a, b) => a.address.length - b.address.length,
+      // sortOrder: sortedInfo.columnKey === "address" && sortedInfo.order,
+      ellipsis: false,
     },
   ];
+  const menu = (
+    <Menu>
+      <Menu.Item key="1">1st menu item</Menu.Item>
+      <Menu.Item key="2">2nd menu item</Menu.Item>
+      <Menu.Item key="3">3rd menu item</Menu.Item>
+    </Menu>
+  );
 
   const handleChange = (pagination, filters, sorter) => {
     console.log("Various parameters", pagination, filters, sorter);
@@ -78,12 +100,27 @@ export default function TableList() {
   const { Search } = Input;
 
   return (
-    <div>
+    <div className="staff-table">
       <Row>
-        <Col span={8}>
-          {/* <Search placeholder="input search text" /> */}
+        <Col style={{ padding: "12px" }} span={11}>
+          <Input placeholder={t("search")+t("fullname")+', '+t("nomer.phone")+', '+t('vacancy')} />
         </Col>
-        <Col span={24}>
+        <Col style={{ padding: "12px" }} span={4}>
+          <DatePicker />
+        </Col>
+        <Col style={{ padding: "12px" }} span={5} offset={1}>
+          <Dropdown overlay={menu}>
+            <Button block>
+              <FilterFilled />
+              {t("expand.filter")}
+              <DownOutlined />
+            </Button>
+          </Dropdown>
+        </Col>
+        <Col style={{ padding: "12px" }} span={2} offset={1} type="primary" >
+          <Button block type="primary" icon={<DownloadOutlined />}  />
+        </Col>
+        <Col style={{ padding: "12px" }} span={24}>
           <Table columns={columns} dataSource={data} onChange={handleChange} />
         </Col>
       </Row>

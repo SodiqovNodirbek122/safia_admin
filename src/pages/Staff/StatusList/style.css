@@ -1,11 +1,11 @@
 .status-list {
-  margin-top: 20px;
-  margin-bottom: 32px;
-  display: flex;
-  justify-content: space-between;
+  margin: 20px 0;
+  /* display: flex;
+  justify-content: space-between; */
 }
 
 .status {
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

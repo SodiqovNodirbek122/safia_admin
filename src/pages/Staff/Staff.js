@@ -40,10 +40,10 @@ export default function Staff() {
               <TableList />
             </TabPane>
             <TabPane tab="Штат" key="2">
-              Штат
+            <TableList />
             </TabPane>
             <TabPane tab="Уволенные" key="3">
-              Уволенные
+            <TableList />
             </TabPane>
             <TabPane tab="Резерв" key="4">
               Резерв
