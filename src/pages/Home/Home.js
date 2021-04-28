@@ -3,6 +3,8 @@ import BreadCrumbTemplete from "../../components/breadcrumb/BreadCrumbTemplete"
 import './style.css'
 import { Card, Tabs, Button } from 'antd'
 import { DownloadOutlined } from '@ant-design/icons'
+import TableList from "./Table/Table";
+import StatusList from "./StatusList/StatusList"
 
 
 const ExtraButton = function () {
@@ -18,39 +20,42 @@ export default function Home() {
     const { TabPane } = Tabs
     const routes = [
         {
-            name: 'Home',
-            route: '/',
-            link: true
+          name: "Сотрудники",
+          route: "/",
+          link: true,
         },
         {
-            name: 'Contacts',
-            link: true,
-            route: '/contact'
+          name: "Кандидаты",
+          link: true,
+          route: "/",
         },
-        {
-            name: 'About',
-            link: false,
-            route: '/contact'
-        }
-    ]
+      ];
     return (
         <div>
-          <BreadCrumbTemplete routes={routes}/>
+          {/* <BreadCrumbTemplete routes={routes}/> */}
           <div className="home">
-                  <Tabs defaultActiveKey="1">
-                      <TabPane tab="Home" key="1"/>
-                      <TabPane tab="Contact" key="2"/>
-                      <TabPane tab="About" key="3"/>
-                      <TabPane tab="Pricing" key="4"/>
-                      <TabPane tab="Support" key="5"/>
-                      <TabPane tab="Address" key="6"/>
-                  </Tabs>
-              <Card title="Home Page" extra={<ExtraButton/>}/>
-              <Card>
-                  <div style={{ paddingLeft: '24px', paddingRight: '24px' }}>
-                  </div>
-              </Card>
-          </div>
+        <Card title={<BreadCrumbTemplete routes={routes} bordered={true} />} >
+        
+          <Tabs defaultActiveKey="1">
+            <TabPane tab="Кандидаты" key="1">
+              <StatusList/>
+              <TableList />
+            </TabPane>
+            <TabPane tab="Штат" key="2">
+              Штат
+            </TabPane>
+            <TabPane tab="Уволенные" key="3">
+              Уволенные
+            </TabPane>
+            <TabPane tab="Резерв" key="4">
+              Резерв
+            </TabPane>
+            <TabPane tab="Негоден" key="5">
+              Негоден
+            </TabPane>
+          </Tabs>
+        </Card>
+      </div>
         </div>
     )
 }

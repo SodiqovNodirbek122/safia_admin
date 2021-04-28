@@ -1,0 +1,40 @@
+.status-list {
+  margin-top: 20px;
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.status {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 160px;
+  background: #f7f7f7;
+  border-radius: 4px;
+  padding: 10px 0;
+}
+
+.status h3 {
+  text-align: center;
+  font-size: 17px;
+  line-height: 22px;
+  color: #6c757d;
+  margin-bottom: 8px;
+}
+
+.status h1 {
+  text-align: center;
+  font-size: 40px;
+  line-height: 48px;
+  color: #000000;
+  margin-bottom: 0;
+}
+
+.status h5 {
+  font-size: 15px;
+  line-height: 20px;
+  text-align: center;
+  color: #20a77f;
+  margin-bottom: 6px;
+}

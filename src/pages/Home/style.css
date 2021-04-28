@@ -12,8 +12,5 @@
     padding: 20px 20px 20px 20px !important;
 }
 .home .ant-card-body {
-    padding: 0 !important;
-}
-.home .ant-tabs-content-holder {
-   display: none !important;
+    padding: 24px 32px !important;
 }

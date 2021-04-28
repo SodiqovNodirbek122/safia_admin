@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import {Layout, notification} from 'antd'
+import {Layout, notification, ConfigProvider} from 'antd'
 import { useHistory } from "react-router-dom"
 import RightContent from '@/components/RightContent'
 import MenuHeader from '@/components/MenuHeader'
@@ -8,6 +8,7 @@ import basic from '@/constants/basic'
 import '@/assets/styles/layout.less'
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons'
 import { useSelector } from 'react-redux'
+import ruRU from "antd/lib/locale/ru_RU"
 const { Header, Content, Sider } = Layout
 
 // ***********************WEBSOCKET****************************************
@@ -78,7 +79,11 @@ export default function MainLayout({ children }) {
             )}
             <RightContent />
           </Header>
-          <Content style={{ margin: '0 16px' }} className="mainBox">{children}</Content>
+          <Content style={{ margin: '0 16px' }} className="mainBox">
+            <ConfigProvider locale={ruRU}>
+              {children}
+            </ConfigProvider>
+          </Content>
         </Layout>
       </Layout>
     </div>
