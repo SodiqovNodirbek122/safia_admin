@@ -30,9 +30,10 @@ export default function Staff() {
   ];
   return (
     <div>
-      {/* <BreadCrumbTemplete routes={routes}/> */}
+      <BreadCrumbTemplete routes={routes}/>
+      
       <div className="staff">
-        <Card title={<BreadCrumbTemplete routes={routes} bordered={true} />}>
+        <Card>
           <Tabs defaultActiveKey="1">
             <TabPane tab="Кандидаты" key="1">
               <StatusList />

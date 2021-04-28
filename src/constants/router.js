@@ -8,7 +8,16 @@ const routes = [
     isSub: false,
     component: lazy(() => import('@/pages/Staff/Staff')),
     meta: { title: 'staff', icon: 'UsergroupAddOutlined', permission: 'staff' },
-    children: [],
+    children: [
+      {
+        path: '/dismissed',
+        name: 'dismissed',
+        isSub: false,
+        component: lazy(() => import('@/pages/Staff/Dismissed/Dismissed')),
+        meta: { title: 'dismissed', icon: '', permission: 'staff' },
+        children: []
+      }
+    ],
   },
   {
     path: '/tasks',

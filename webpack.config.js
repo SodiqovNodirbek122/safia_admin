@@ -5,7 +5,7 @@ const Dotenv = require('dotenv-webpack');
 const CopyPlugin = require("copy-webpack-plugin");
 
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const port = 7077
+const port = 7070
 
 module.exports = {
     mode: 'development',
