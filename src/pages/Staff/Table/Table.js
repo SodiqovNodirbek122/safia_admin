@@ -12,36 +12,43 @@ import {
   Menu,
 } from "antd";
 import { useTranslation } from "react-i18next";
-import { DownOutlined, FilterFilled,DownloadOutlined } from "@ant-design/icons";
+import { DownOutlined, FilterFilled,DownloadOutlined,SearchOutlined } from "@ant-design/icons";
 
 export default function TableList() {
   const { t } = useTranslation();
   const [filteredInfo, SetFilteredInfo] = useState({});
-  const [sortedInfo, SetSortedInfo] = useState({});
   const data = [
     {
       key: "1",
       fullname: "John Brown",
       vacancy: "vacancy",
       branches: "New York No. 1 Lake Park",
+      nomerPhone:'+998 91 415 58 40',
+      source:"Работа.уз"
     },
     {
       key: "2",
       fullname: "Jim Green",
       vacancy: "teacher ",
       branches: "London No. 1 Lake Park",
+      nomerPhone:'+998 91 415 58 40',
+      source:"Работа.уз"
     },
     {
       key: "3",
       fullname: "Joe Black",
       vacancy: "best vacancy",
       branches: "Sidney No. 1 Lake Park",
+      nomerPhone:'+998 91 415 58 40',
+      source:"Работа.уз"
     },
     {
       key: "4",
       fullname: "Jim Red",
       vacancy: "best teacher",
       branches: "London No. 2 Lake Park",
+      nomerPhone:'+998 91 415 58 40',
+      source:"Работа.уз"
     },
   ];
   const columns = [
@@ -55,7 +62,6 @@ export default function TableList() {
       ],
       filteredValue: filteredInfo.fullname || null,
       onFilter: (value, record) => record.fullname.includes(value),
-      ellipsis: true,
     },
     {
       title: t("vacancy"),
@@ -67,7 +73,6 @@ export default function TableList() {
       ],
       filteredValue: filteredInfo.vacancy || null,
       onFilter: (value, record) => record.vacancy.includes(value),
-      ellipsis: true,
     },
     {
       title: t("branches"),
@@ -81,7 +86,28 @@ export default function TableList() {
       onFilter: (value, record) => record.branches.includes(value),
       // sorter: (a, b) => a.address.length - b.address.length,
       // sortOrder: sortedInfo.columnKey === "address" && sortedInfo.order,
-      ellipsis: false,
+    },    
+    {
+      title: t("nomer.phone"),
+      dataIndex: "nomerPhone",
+      key: "nomerPhone",
+      filters: [
+        { text: "91", value: "91" },
+        { text: "90", value: "90" },
+      ],
+      filteredValue: filteredInfo.nomerPhone || null,
+      onFilter: (value, record) => record.nomerPhone.includes(value),
+    },
+    {
+      title: t("source"),
+      dataIndex: "source",
+      key: "source",
+      filters: [
+        { text: "91", value: "91" },
+        { text: "90", value: "90" },
+      ],
+      filteredValue: filteredInfo.nomerPhone || null,
+      onFilter: (value, record) => record.nomerPhone.includes(value),
     },
   ];
   const menu = (
@@ -103,7 +129,7 @@ export default function TableList() {
     <div className="staff-table">
       <Row>
         <Col style={{ padding: "12px" }} span={11}>
-          <Input placeholder={t("search")+t("fullname")+', '+t("nomer.phone")+', '+t('vacancy')} />
+          <Input prefix={<SearchOutlined />} placeholder={t("search")+t("fullname")+', '+t("nomer.phone")+', '+t('vacancy')} />
         </Col>
         <Col style={{ padding: "12px" }} span={4}>
           <DatePicker />

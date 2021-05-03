@@ -1,9 +1,17 @@
-.staff-table .ant-input,
+.staff-table .ant-input-affix-wrapper,
 .staff-table .ant-picker,
 .staff-table .ant-dropdown-trigger {
-  background: #f7f7f7 !important;
-  border-radius: 6px !important;
-  border: none !important;
+  background: #f7f7f7 ;
+  border-radius: 6px ;
+  border: none ;
+}
+
+.staff-table .ant-input {
+  background-color: transparent;
+}
+
+.staff-table .ant-dropdown-trigger {
+  color: #6C757D;
 }
 
 .staff-table .ant-btn-primary {
@@ -14,4 +22,9 @@
 
 .staff-table .ant-btn-primary .anticon {
   font-size: 24px;
+}
+
+
+.staff-table .ant-table-bordered, .staff-table .ant-table-container {
+  border: none !important;
 }

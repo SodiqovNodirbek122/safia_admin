@@ -23,7 +23,7 @@ const routes = [
     path: '/tasks',
     name: 'dashboard',
     isSub: false,
-    component: lazy(() => import('@/pages/Staff/Staff')),
+    component: lazy(() => import('@/pages/Tasks/Tasks')),
     meta: { title: 'tasks', icon: 'UnorderedListOutlined', permission: 'staff' },
     children: [],
   },

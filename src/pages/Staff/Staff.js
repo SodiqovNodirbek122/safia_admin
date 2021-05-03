@@ -5,45 +5,41 @@ import { Card, Tabs, Button } from "antd";
 import { DownloadOutlined } from "@ant-design/icons";
 import StatusList from "./StatusList/StatusList";
 import TableList from "./Table/Table";
-
-const ExtraButton = function () {
-  return (
-    <Button type="primary" icon={<DownloadOutlined />}>
-      Download
-    </Button>
-  );
-};
+import StyledTab from "@/components/StyledTab/StyledTab";
+import { useTranslation } from "react-i18next";
 
 export default function Staff() {
-  const { TabPane } = Tabs;
+  const { TabPane } = StyledTab;
+  const { t } = useTranslation();
+
   const routes = [
     {
-      name: "Сотрудники",
+      name: t("staff"),
       route: "/",
       link: true,
     },
     {
-      name: "Кандидаты",
+      name: t("candidates"),
       link: true,
       route: "/",
     },
   ];
   return (
     <div>
-      <BreadCrumbTemplete routes={routes}/>
-      
+      <BreadCrumbTemplete routes={routes} />
+
       <div className="staff">
         <Card>
-          <Tabs defaultActiveKey="1">
+          <StyledTab defaultActiveKey="1">
             <TabPane tab="Кандидаты" key="1">
               <StatusList />
               <TableList />
             </TabPane>
             <TabPane tab="Штат" key="2">
-            <TableList />
+              <TableList />
             </TabPane>
             <TabPane tab="Уволенные" key="3">
-            <TableList />
+              <TableList />
             </TabPane>
             <TabPane tab="Резерв" key="4">
               Резерв
@@ -51,7 +47,7 @@ export default function Staff() {
             <TabPane tab="Негоден" key="5">
               Негоден
             </TabPane>
-          </Tabs>
+          </StyledTab>
         </Card>
       </div>
     </div>
