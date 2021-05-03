@@ -1,9 +1,10 @@
 import "./style.css"
 import React from "react"
-import BreadCrumbTemplete from "@/components/breadcrumb/BreadCrumbTemplete"
-import { useTranslation } from 'react-i18next'
-import { Card, Tabs } from "antd"
+import { Card } from "antd"
+import { Main } from "./Main"
 import StyledTab from "@/components/StyledTab/StyledTab"
+import { useTranslation } from 'react-i18next'
+import BreadCrumbTemplete from "@/components/breadcrumb/BreadCrumbTemplete"
 
 const { TabPane } = StyledTab;
 
@@ -29,16 +30,16 @@ export default function Dismissed() {
 
             <Card className="content">
                 <StyledTab defaultActiveKey="1">
-                    <TabPane tab={t("main")} key="1" style={{margin: 0, padding: "16px 20px"}} className="safia-tab">
-                        Content of Tab Pane 1
+                    <TabPane tab={t("main")} key="1">
+                        <Main />
                     </TabPane>
-                    <TabPane tab={t("work")} key="2" className="safia-tab">
+                    <TabPane tab={t("work")} key="2">
                         Content of Tab Pane 2
                     </TabPane>
-                    <TabPane tab={t("bonuses.penalties")} key="3" className="safia-tab">
+                    <TabPane tab={t("bonuses.penalties")} key="3">
                         Content of Tab Pane 3
                     </TabPane>
-                    <TabPane tab={t("documents")} key="4" className="safia-tab">
+                    <TabPane tab={t("documents")} key="4">
                         Content of Tab Pane 3
                     </TabPane>
                 </StyledTab>
