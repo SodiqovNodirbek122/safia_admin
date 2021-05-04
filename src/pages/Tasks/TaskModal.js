@@ -14,9 +14,10 @@ import "./style.less";
 import img from "@/assets/images/user.png";
 import tableImg from "@/assets/images/user.png";
 
-export default function TaskModal() {
+export default function TaskModal({visible, setVisible}) {
+  // console.log(props);
   const { t } = useTranslation();
-  const [isModalVisible, setIsModalVisible] = useState(true);
+  // const [isModalVisible, setIsModalVisible] = useState(false);
   const menu = (
     <Menu>
       <Menu.Item key="1">1st menu item</Menu.Item>
@@ -29,13 +30,13 @@ export default function TaskModal() {
       title: t("fullname"),
       dataIndex: "fullname",
       key: "fullname",
-      render: (text) => <Link>{text}</Link>,
+      render: (text) => <a>{text}</a>,
     },
     {
       title: t("phone.number"),
       dataIndex: "phone",
       key: "phone",
-      render: (text) => <Link>{text}</Link>,
+      render: (text) => <a>{text}</a>,
       // render: (text, record) => (
       //   <div>
       //     { moment(text).format('YYYY-MM-DD HH:mm') }
@@ -108,9 +109,12 @@ export default function TaskModal() {
     },
   ];
 
-  const showModal = () => {
-    setIsModalVisible(true);
-  };
+  // const showModal = () => {
+  //   console.log(props.show);
+  //   setIsModalVisible(props.show);
+  //   setIsModalVisible(true)
+  // }
+
 
   const handleCancel = () => {
     setIsModalVisible(false);
@@ -118,13 +122,10 @@ export default function TaskModal() {
 
   return (
     <div className="task-modal">
-      <Button type="primary" onClick={showModal}>
-        Open Modal
-      </Button>
       <Modal
         title={t("internship") + " на 21.09"}
-        visible={isModalVisible}
-        onCancel={handleCancel}
+        visible={visible}
+        onCancel={() => setVisible(false)}
         width={"80%"}
       >
         <div className="modal-header">

@@ -20,35 +20,30 @@ export default function TableList() {
   const data = [
     {
       key: "1",
-      fullname: "John Brown",
-      vacancy: "vacancy",
-      branches: "New York No. 1 Lake Park",
-      nomerPhone:'+998 91 415 58 40',
-      source:"Работа.уз"
+      fullname: "Сафаров Комил ",
+      vacancy: "Управляющий",
+      branches: "Изза ",
+      nomerPhone:'93 391 17 94',
+      source:"Работа.уз",
+      dateClosing:"04.04 - 01.02"
     },
     {
       key: "2",
-      fullname: "Jim Green",
-      vacancy: "teacher ",
-      branches: "London No. 1 Lake Park",
-      nomerPhone:'+998 91 415 58 40',
-      source:"Работа.уз"
+      fullname: "Исаева Юлиа",
+      vacancy: "Продавец ",
+      branches: "Цум",
+      nomerPhone:'99 011 18 72',
+      source:"Телеграм",
+      dateClosing:"04.04 - 01.02"
     },
     {
       key: "3",
-      fullname: "Joe Black",
-      vacancy: "best vacancy",
-      branches: "Sidney No. 1 Lake Park",
-      nomerPhone:'+998 91 415 58 40',
-      source:"Работа.уз"
-    },
-    {
-      key: "4",
-      fullname: "Jim Red",
-      vacancy: "best teacher",
-      branches: "London No. 2 Lake Park",
-      nomerPhone:'+998 91 415 58 40',
-      source:"Работа.уз"
+      fullname: "Мирзаева Гуласал",
+      vacancy: "Бариста",
+      branches: "Ракат",
+      nomerPhone:'90 349 55 24',
+      source:"Коллдж",
+      dateClosing:"04.04 - 01.02"
     },
   ];
   const columns = [
@@ -106,8 +101,18 @@ export default function TableList() {
         { text: "91", value: "91" },
         { text: "90", value: "90" },
       ],
-      filteredValue: filteredInfo.nomerPhone || null,
-      onFilter: (value, record) => record.nomerPhone.includes(value),
+      filteredValue: filteredInfo.source || null,
+      onFilter: (value, record) => record.source.includes(value),
+    },
+    {
+      title: t("date.closing"),
+      dataIndex: "dateClosing",
+      key: "dateClosing",
+      filters: [
+        { text: "04.04 - 01.02", value: "04.04 - 01.02" },
+      ],
+      filteredValue: filteredInfo.dateClosing || null,
+      onFilter: (value, record) => record.dateClosing.includes(value),
     },
   ];
   const menu = (
@@ -118,10 +123,9 @@ export default function TableList() {
     </Menu>
   );
 
-  const handleChange = (pagination, filters, sorter) => {
-    console.log("Various parameters", pagination, filters, sorter);
+  const handleChange = (pagination, filters) => {
+    console.log("Various parameters", pagination, filters);
     SetFilteredInfo(filters);
-    SetSortedInfo(sorter);
   };
   const { Search } = Input;
 
