@@ -1,0 +1,19 @@
+{
+  "dashboard": "Boshqaruv Paneli",
+  "orders": "Buyurtmalar",
+  "templates": "Elementlar",
+  "products": "Mahsulotlar",
+  "marketing": "Marketing",
+  "fulfillmentBalance": "Fullfillment Balance",
+  "uploadedFiles": "Yuklangan Fayllar",
+  "returnRequest": "Pulni Qaytarib Berish So'rovi Yuborildi",
+  "return": "Pulni Qaytarish",
+  "productReviews": "Mahsulot Sharhlari",
+  "salesHistory": "Sotish Tarixi",
+  "historyOfTheCommission": "Komissiya Tarixi",
+  "receiptHistory": "Qabul Qilish Tarixi",
+  "questionsAndAnswers": "Suhbatlar",
+  "support": "Yordam So'rovi",
+  "profileManagement": "Profilni Boshqarish",
+  "storeSetup": "Do'kon Sozlamalari"
+}

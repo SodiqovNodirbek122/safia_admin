@@ -1,3 +1,19 @@
 {
-  "clients": "Clients"
+  "dashboard": "Dashboard",
+  "orders": "Orders",
+  "templates": "Templates",
+  "products": "Products",
+  "marketing": "Marketing",
+  "fulfillmentBalance": "Fulfillment Balance",
+  "uploadedFiles": "Uploaded Files",
+  "returnRequest": "Return Request",
+  "return": "Return",
+  "productReviews": "Product Reviews",
+  "salesHistory": "Sales History",
+  "historyOfTheCommission": "History Of The Commission",
+  "receiptHistory": "Receipt History",
+  "questionsAndAnswers": "Questions And Answers",
+  "support": "Support",
+  "profileManagement": "Profile Management",
+  "storeSetup": "Store Setup"
 }

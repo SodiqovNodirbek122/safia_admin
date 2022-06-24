@@ -1,47 +1,55 @@
 import {
-  DesktopOutlined,
-  PieChartOutlined,
+  HomeOutlined,
   UserOutlined,
-  AppstoreOutlined,
-  DashboardOutlined,
-  MobileOutlined,
-  ShoppingOutlined,
   SettingOutlined,
-  UsergroupAddOutlined,
-  UnorderedListOutlined,
-  ProjectFilled,
-  SettingFilled,
-} from "@ant-design/icons";
+  StarOutlined,
+  SketchOutlined,
+  HistoryOutlined,
+  MessageOutlined,
+  FileTextOutlined,
+  NotificationOutlined,
+  FolderOpenOutlined,
+  FieldTimeOutlined,
+  FastBackwardOutlined,
+  RollbackOutlined,
+  TeamOutlined,
+  ShoppingOutlined,
+} from '@ant-design/icons'
 
 function IconFinder(icon) {
   switch (icon) {
-    case "DesktopOutlined":
-      return <DesktopOutlined />;
-    case "PieChartOutlined":
-      return <PieChartOutlined />;
-    case "UserOutlined":
-      return <UserOutlined />;
-    case "AppstoreOutlined":
-      return <AppstoreOutlined />;
-    case "DashboardOutlined":
-      return <DashboardOutlined />;
-    case "MobileOutlined":
-      return <MobileOutlined />;
-    case "ShoppingOutlined":
-      return <ShoppingOutlined />;
-    case "SettingOutlined":
-      return <SettingOutlined />;
-
-    case "UsergroupAddOutlined":
-      return <UsergroupAddOutlined />;
-    case "UnorderedListOutlined":
-      return <UnorderedListOutlined />;
-    case "ProjectFilled":
-      return <ProjectFilled rotate={180} />;
-    case "SettingFilled":
-      return <SettingFilled />;
+    case 'HomeOutlined':
+      return <HomeOutlined />
+    case 'UserOutlined':
+      return <UserOutlined />
+    case 'SettingOutlined':
+      return <SettingOutlined />
+    case 'StarOutlined':
+      return <StarOutlined />
+    case 'SketchOutlined':
+      return <SketchOutlined />
+    case 'HistoryOutlined':
+      return <HistoryOutlined />
+    case 'MessageOutlined':
+      return <MessageOutlined />
+    case 'FileTextOutlined':
+      return <FileTextOutlined />
+    case 'NotificationOutlined':
+      return <NotificationOutlined />
+    case 'FolderOpenOutlined':
+      return <FolderOpenOutlined />
+    case 'FieldTimeOutlined':
+      return <FieldTimeOutlined />
+    case 'FastBackwardOutlined':
+      return <FastBackwardOutlined />
+    case 'RollbackOutlined':
+      return <RollbackOutlined />
+    case 'TeamOutlined':
+      return <TeamOutlined />
+    case 'ShoppingOutlined':
+      return <ShoppingOutlined />
     default:
-      break;
+      break
   }
 }
-export default IconFinder;
+export default IconFinder

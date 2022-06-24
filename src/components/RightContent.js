@@ -1,6 +1,6 @@
 import { Avatar } from 'antd'
-import { UserOutlined, LogoutOutlined, BellOutlined } from '@ant-design/icons'
-import { Menu, Dropdown, Badge } from 'antd'
+import { UserOutlined, LogoutOutlined } from '@ant-design/icons'
+import { Menu, Dropdown } from 'antd'
 import { useHistory } from 'react-router-dom'
 import './styles/style.less'
 import basic from '../constants/basic'
@@ -10,31 +10,36 @@ import { useDispatch } from 'react-redux'
 function RightContent() {
   const dispatch = useDispatch()
   const history = useHistory()
+
   const Logout = function () {
     dispatch(logout())
     localStorage.removeItem('token')
     history.push('/login')
   }
+
   const menu = (
     <Menu>
       <Menu.Item>
         <UserOutlined /> Profile
       </Menu.Item>
-      <Menu.Item
-        onClick={() => {
-            Logout()
-
-        }}
-      >
+      <Menu.Item onClick={() => Logout()}>
         <LogoutOutlined /> Log out
       </Menu.Item>
     </Menu>
   )
+  const langs = (
+    <Menu>
+      <Menu.Item>ENGLISH</Menu.Item>
+      <Menu.Item>RUSSIAN</Menu.Item>
+      <Menu.Item>UZBEK</Menu.Item>
+    </Menu>
+  )
+
   return (
     <div style={{ display: 'flex', alignItems: 'center' }}>
-      <Badge style={{ marginRight: '10px', cursor: 'pointer' }} count={5}>
-        <BellOutlined style={{ fontSize: '20px', marginRight: '10px' }} />
-      </Badge>
+      <Dropdown overlay={langs} className='dropdown'>
+        <div>LANG</div>
+      </Dropdown>
       <Dropdown overlay={menu} className='dropdown'>
         <div className='right_content'>
           <Avatar

@@ -10,7 +10,7 @@ import Routes from './routes/routes'
 import MainLayout from './layouts/MainLayout'
 import Login from './pages/Login/Login'
 import 'nprogress/nprogress.css'
-import OrdersLayout from "./layouts/OrdersLayout"
+import OrdersLayout from './layouts/OrdersLayout'
 
 function App() {
   const isLoad = useSelector((state) => state.auth.isLoading)
@@ -21,6 +21,7 @@ function App() {
           {isLoad ? <Loader /> : undefined}
           <BrowserRouter>
             <Route path='/login' exact component={Login} />
+            {/* <Route path='404' exact component={<h1>Not found</h1>} /> */}
             <MainLayout>
               <Routes />
             </MainLayout>
@@ -28,7 +29,6 @@ function App() {
             {/* <OrdersLayout>
               <Routes />
             </OrdersLayout> */}
-
           </BrowserRouter>
         </Suspense>
       </div>

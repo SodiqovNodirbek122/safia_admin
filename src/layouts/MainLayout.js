@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import {Layout, notification, ConfigProvider} from 'antd'
-import { useHistory } from "react-router-dom"
+import { Layout, ConfigProvider } from 'antd'
+import { useHistory } from 'react-router-dom'
 import RightContent from '@/components/RightContent'
 import MenuHeader from '@/components/MenuHeader'
 import MainMenu from '@/components/menu/Menu'
@@ -8,28 +8,8 @@ import basic from '@/constants/basic'
 import '@/assets/styles/layout.less'
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons'
 import { useSelector } from 'react-redux'
-import ruRU from "antd/lib/locale/ru_RU"
+import ruRU from 'antd/lib/locale/ru_RU'
 const { Header, Content, Sider } = Layout
-
-// ***********************WEBSOCKET****************************************
-const token = localStorage.getItem('token')
-// if (token) {
-//   const websocket = new WebSocket(`wss://websocket.muno.uz/ws?Authorization=${token}`)
-//   websocket.onopen = () => {
-//     console.log('Muno socket connecting.....')
-//   }
-//   websocket.onmessage = (e) => {
-//     console.log('WebSocket message received: ', e)
-//     notification.warning({
-//       message: 'WebSocket Received'
-//     })
-//   }
-// }
-// ***********************WEBSOCKET****************************************
-
-
-
-
 
 export default function MainLayout({ children }) {
   const [collapsed, setCollapsed] = useState(false)
@@ -38,10 +18,10 @@ export default function MainLayout({ children }) {
   const history = useHistory()
 
   useEffect(() => {
-    if(!isAuthorited) {
+    if (!isAuthorited) {
       history.push('/login')
     }
-  }, []);
+  }, [])
 
   return (
     <div className={`App ${isAuthorited ? '' : 'd-none'}`}>
@@ -79,10 +59,8 @@ export default function MainLayout({ children }) {
             )}
             <RightContent />
           </Header>
-          <Content style={{ margin: '0 16px' }} className="mainBox">
-            <ConfigProvider locale={ruRU}>
-              {children}
-            </ConfigProvider>
+          <Content style={{ margin: '0 16px' }} className='mainBox'>
+            <ConfigProvider locale={ruRU}>{children}</ConfigProvider>
           </Content>
         </Layout>
       </Layout>
